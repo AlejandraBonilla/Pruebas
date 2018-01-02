@@ -47,8 +47,8 @@ def analyze(self):
         # fill eta and pt histograms for muons only
         if abs(pdfId) == 13:
             
-            gen_mu_pt.Fill(p4.Pt())
-            gen_mu_eta.Fill(p4.Eta())
+            lep_mu_pt.Fill(p4.Pt())
+            lep_mu_eta.Fill(p4.Eta())
 
         
     # now we try to reconstruct the 4 leptons to the Higgs mass
@@ -65,7 +65,7 @@ def analyze(self):
     if genMuFound == 4:
 
         #print higgs.M() 
-        gen_mass_h.Fill(higgs.M())
+        lep_mass_h.Fill(higgs.M())
         
         
 if __name__ == "__main__":

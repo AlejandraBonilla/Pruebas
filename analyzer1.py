@@ -54,15 +54,15 @@ def analyze(self):
     # now we try to reconstruct the 4 leptons to the Higgs mass
     # we make an empty Lorentzvector and add all the muons to it
     higgs = ROOT.TLorentzVector()
-    genMuFound = 0 # we need exactly 4 muons
+    lepMuFound = 0 # we need exactly 4 muons
     for p in self.leptons:
 
         if abs(p.pdfId) != 13: continue
-        genMuFound += 1
+        lepMuFound += 1
         higgs += p.p4
 
 
-    if genMuFound == 4:
+    if lepMuFound == 4:
 
         #print higgs.M() 
         lep_mass_h.Fill(higgs.M())

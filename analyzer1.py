@@ -13,7 +13,7 @@ def analyze(self):
         pdgId = p.pdgId # particle ID for the paricle (muon = 13, Higgs = 25) http://pdg.lbl.gov/2007/reviews/montecarlorpp.pdf
 
         # fill eta and pt histograms for muons only
-        if abs(pdfId) == 13:
+        if abs(pdgId) == 13:
             
             gen_mu_pt.Fill(p4.Pt())
             gen_mu_eta.Fill(p4.Eta())
